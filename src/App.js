@@ -1,43 +1,48 @@
 
-import React from 'react';
+import React, { Component } from 'react';
 
-class MyCoolHeader extends React.Component {
+import images from './data.js';
+import './App.css';
+
+
+class Header extends React.Component {
   render() {
       return (
-          <div> Hi, {this.props.name}, I am the header!</div>
+          <div> Hi, Welcome  {this.props.name}, to the Horned Animal Page!</div>
+          
       );
   }
 }
 
-class MyAmazingArticle extends React.Component {
+ class ImageItem extends Component {
   render() {
       return (
-          <div>I am the article!</div>
-      );
+          <div className="image-item" stye={{ background: this.props.color }}>
+              <div>{this.props.title}</div>
+              <img className="creature" src={this.props.src} alt='horned creature' />
+              <div>{this.props.description}</div>
+          </div>
+      )
   }
 }
 
-class MySpecialFooter extends React.Component {
-  render() {
-      return (
-          <div> I am the footer! Call us at {this.props.phone}</div>
-      );
-  }
+function App() {
+  return (
+    <div className="App">
+      <Header name="Sarah" />
+      {
+        images.map(image => <ImageItem
+          title={image.title}
+          src={image.url}
+          description={image.description} />
+        )
+      }
+
+    </div>
+  );
 }
 
-export default class PutEmAllTogether extends React.Component {
-  render() {
-      return (
-        <div>
-        <h1>Time to click the legos together!</h1>
-        
-          <MyCoolHeader name="dani" />
-          <MyAmazingArticle />
-          <MySpecialFooter phone="345-456-5431" />
-        </div>
-      );
-  }
-}
+export default App;
 
 
 

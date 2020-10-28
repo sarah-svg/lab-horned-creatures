@@ -14,6 +14,12 @@ class Header extends React.Component {
   }
 }
 
+
+
+
+
+
+
  class ImageItem extends Component {
   render() {
       return (
@@ -27,9 +33,17 @@ class Header extends React.Component {
 }
 
 function App() {
+  
   return (
     <div className="App">
       <Header name="Sarah" />
+     <select >
+     <option value=''>All Options</option>
+       <option value='1'>1</option>
+       <option value='2'>2</option>
+       <option value='3'>3</option>
+       <option value='100'>100</option>
+     </select>
       {
         images.map(image => <ImageItem
           title={image.title}

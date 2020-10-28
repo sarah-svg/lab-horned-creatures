@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React from 'react'
 
  export default class ImageItem extends Component {
     render() {
@@ -10,7 +10,7 @@ import React, { Component } from 'react'
                 <img className="creature" src={this.props.src} alt='horned creature' />
                 <div>{this.props.description}</div>
             </div>
-            
+
             </>
         )
     }

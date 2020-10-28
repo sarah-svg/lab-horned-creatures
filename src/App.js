@@ -1,44 +1,22 @@
 
 import React, { Component } from 'react';
-
-import images from './data.js';
+import Header from './Header.js';
+import ImageList from './ImageList.js';
 import './App.css';
+import items from './data.js';
 
 
-class Header extends React.Component {
-  render() {
-      return (
-          <div> Hi, Welcome  {this.props.name}, to the Horned Animal Page!</div>
-          
-      );
-  }
-}
 
- class ImageItem extends Component {
-  render() {
-      return (
-          <div className="image-item" stye={{ background: this.props.color }}>
-              <div>{this.props.title}</div>
-              <img className="creature" src={this.props.src} alt='horned creature' />
-              <div>{this.props.description}</div>
-          </div>
-      )
-  }
-}
 
 function App() {
+
   return (
+    <>
     <div className="App">
       <Header name="Sarah" />
-      {
-        images.map(image => <ImageItem
-          title={image.title}
-          src={image.url}
-          description={image.description} />
-        )
-      }
-
+     <ImageList items={items}/>
     </div>
+    </>
   );
 }
 

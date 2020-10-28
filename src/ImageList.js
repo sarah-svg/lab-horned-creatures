@@ -8,7 +8,7 @@ import ImageItem from './ImageItem.js';
 export default class ImageList extends Component {
 
     state = {
-        filter1: ''
+        filter: ''
       
     }
 

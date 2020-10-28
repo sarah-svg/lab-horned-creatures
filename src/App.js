@@ -6,10 +6,30 @@ import './App.css';
 
 
 class Header extends React.Component {
+  state = {
+    filter: ''
+  }
+
+  handleChange = e => {
+    this.setState({
+      filter: e.target.value
+    });
+  }
   render() {
+   
       return (
+        <>
           <div> Hi, Welcome  {this.props.name}, to the Horned Animal Page!</div>
+          <div>Search through who has the most horns.</div>
           
+          <select onChange={this.handleChange}>
+          <option value=''>All Options</option>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='3'>3</option>
+        <option value='100'>100</option>
+     </select>
+     </>
       );
   }
 }
@@ -33,18 +53,12 @@ class Header extends React.Component {
 }
 
 function App() {
-  
+
   return (
     <div className="App">
       <Header name="Sarah" />
-     <select >
-     <option value=''>All Options</option>
-       <option value='1'>1</option>
-       <option value='2'>2</option>
-       <option value='3'>3</option>
-       <option value='100'>100</option>
-     </select>
-      {
+          <div />
+     {
         images.map(image => <ImageItem
           title={image.title}
           src={image.url}
